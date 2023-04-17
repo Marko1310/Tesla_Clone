@@ -1,5 +1,45 @@
-.section-container{
-    width: 100vw;
-    height: 100vh;
-    background-color: aliceblue;
+.section-container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/public/images/model-3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-text-container {
+  padding-top: 15vh;
+  text-align: center;
+}
+
+.button-container {
+  font-size: 12px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-left {
+  background-color: rgba(23, 26, 32, 0.8);
+  height: 40px;
+  width: 256px;
+  color: white;
+  border-radius: 100px;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+.button-right {
+  background-color: rgba(23, 26, 32, 0.8);
+  height: 40px;
+  width: 256px;
+  color: white;
+  border-radius: 100px;
+  opacity: 0.85;
+  text-transform: uppercase;
 }
