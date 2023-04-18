@@ -53,6 +53,5 @@ export const inventory = [
     img: '../images/accessories.jpg',
     description: '',
     leftBtnText: 'Shop Now',
-    rightBtnText: '',
   },
 ];

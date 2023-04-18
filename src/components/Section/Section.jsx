@@ -11,7 +11,7 @@ const Section = ({ el }) => {
       <div className="section-bottom">
         <div className="button-container">
           <button className="button-left">{el.leftBtnText}</button>
-          <button className="button-right">{el.rightBtnText}</button>
+          {el.rightBtnText && <button className="button-right">{el.rightBtnText}</button>}
         </div>
         <img src="./images/down-arrow.svg" className="arrow" alt="arrow"></img>
       </div>
