@@ -1,14 +1,13 @@
 import './Home.css';
 import Section from '../Section/Section';
+import { inventory } from '../../data/inventory';
 
 const Home = () => {
   return (
     <div className="home-container">
-      <Section />
-      <Section />
-      <Section />
-      <Section />
-      <Section />
+      {inventory.map((el) => {
+        return <Section key={el.id} el={el} />;
+      })}
     </div>
   );
 };

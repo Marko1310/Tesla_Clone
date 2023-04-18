@@ -19,7 +19,7 @@
 .section-container {
   width: 100vw;
   height: 100vh;
-  background-image: url('/public/images/model-3.jpg');
+  background-image: url('../../images/model-3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
