@@ -1,5 +1,6 @@
 import logo from '../../images/logo.svg';
 import './Header.css';
+import { inventory } from '../../data/inventory';
 
 const Header = () => {
   return (
@@ -8,29 +9,13 @@ const Header = () => {
         <img className="header-logo" alt="logo" src={logo} />
       </a>
       <div className="menu-center">
-        {/* <p> */}
-        <a className="menu-center-tags" href="#">
-          Model S
-        </a>
-        <a className="menu-center-tags" href="#">
-          Model 3
-        </a>
-        <a className="menu-center-tags" href="#">
-          Model X
-        </a>
-        <a className="menu-center-tags" href="#">
-          Model Y
-        </a>
-        {/* <a className="menu-center-tags" href="#">
-          Solar Roof
-        </a>
-        <a className="menu-center-tags" href="#">
-          Solar Panels
-        </a>
-        <a className="menu-center-tags" href="#">
-          Powerwall
-        </a> */}
-        {/* </p> */}
+        {inventory.map((el) => {
+          return (
+            <a className="menu-center-tags" key={el.id} href={`#${el.id}`}>
+              {el.title}
+            </a>
+          );
+        })}
       </div>
       <div className="menu-right">
         <a className="menu-right-tags shop">Shop</a>
