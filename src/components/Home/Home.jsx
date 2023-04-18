@@ -2,11 +2,11 @@ import './Home.css';
 import Section from '../Section/Section';
 import { inventory } from '../../data/inventory';
 
-const Home = () => {
+const Home = ({ renderSlide }) => {
   return (
     <div className="home-container">
       {inventory.map((el) => {
-        return <Section key={el.id} el={el} />;
+        return <Section renderSlide={renderSlide} key={el.id} el={el} />;
       })}
     </div>
   );

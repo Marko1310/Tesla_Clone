@@ -22,6 +22,15 @@ const Header = () => {
         <a className="menu-right-tags account">Account</a>
         <a className="menu-right-tags menu">Menu</a>
       </div>
+      <div className="popmenu">
+        {inventory.map((el) => {
+          return (
+            <a className="popmenu-tags" key={el.id} href={`#${el.id}`}>
+              {el.title}
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 };
