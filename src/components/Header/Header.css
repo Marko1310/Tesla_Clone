@@ -52,11 +52,27 @@
   bottom: 0;
   right: 0;
   background-color: white;
-  width: 300px;
+  width: 250px;
+  z-index: 10;
+  padding: 20px;
+  transform: translateX(100%);
 }
 
 .popmenu-tags {
   display: flex;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.x-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.x {
+  height: 15px;
+  cursor: pointer;
 }
 
 @media all and (max-width: 1025px) {
