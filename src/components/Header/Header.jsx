@@ -3,9 +3,13 @@ import './Header.css';
 import { inventory } from '../../data/inventory';
 import Popmenu from './Popmenu';
 import React, { useState } from 'react';
+import { useContext } from 'react';
+
+// Contex
+import { GlobalContext } from '../../context/GlobalContext';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { setMenuOpen } = useContext(GlobalContext);
 
   return (
     <div className="header-container">
@@ -28,7 +32,7 @@ const Header = () => {
           Menu
         </a>
       </div>
-      <Popmenu inventory={inventory} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Popmenu inventory={inventory} />
     </div>
   );
 };

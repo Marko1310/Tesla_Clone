@@ -46,43 +46,6 @@
   padding: 0 10px;
 }
 
-.popmenu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background-color: white;
-  width: 250px;
-  z-index: 10;
-  padding: 20px;
-  transition: transform 0.2s;
-}
-
-.open {
-  transform: translateX(0%);
-}
-
-.close {
-  transform: translateX(100%);
-}
-
-.popmenu-tags {
-  display: flex;
-  text-decoration: none;
-  margin-bottom: 30px;
-}
-
-.x-container {
-  display: flex;
-  justify-content: end;
-  margin-bottom: 20px;
-}
-
-.x {
-  height: 15px;
-  cursor: pointer;
-}
-
 @media all and (max-width: 1025px) {
   .menu-center {
     display: none;
