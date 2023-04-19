@@ -1,21 +1,23 @@
-import logo from '../../images/logo.svg';
+// react
+import React, { useContext } from 'react';
+
+//css
 import './Header.css';
-import { inventory } from '../../data/inventory';
-import Popmenu from './Popmenu';
-import React, { useState } from 'react';
-import { useContext } from 'react';
+
+// images
+import logo from '../../images/logo.svg';
 
 // Contex
 import { GlobalContext } from '../../context/GlobalContext';
 
 const Header = () => {
-  const { setMenuOpen } = useContext(GlobalContext);
+  const { menuOpen, setMenuOpen, inventory } = useContext(GlobalContext);
 
   return (
-    <div className="header-container">
-      <a>
+    <div className={`header-container ${menuOpen ? 'blurred' : ''}`}>
+      <div>
         <img className="header-logo" alt="logo" src={logo} />
-      </a>
+      </div>
       <div className="menu-center">
         {inventory.map((el) => {
           return (
@@ -26,13 +28,12 @@ const Header = () => {
         })}
       </div>
       <div className="menu-right">
-        <a className="menu-right-tags shop">Shop</a>
-        <a className="menu-right-tags account">Account</a>
-        <a className="menu-right-tags menu" onClick={() => setMenuOpen(true)}>
+        <p className="menu-right-tags shop">Shop</p>
+        <p className="menu-right-tags account">Account</p>
+        <p className="menu-right-tags menu" onClick={() => setMenuOpen(true)}>
           Menu
-        </a>
+        </p>
       </div>
-      <Popmenu inventory={inventory} />
     </div>
   );
 };

@@ -1,10 +1,17 @@
+// react
+import React, { useContext } from 'react';
+
+// css
 import './Home.css';
+
+// components
 import Section from '../Section/Section';
-import { inventory } from '../../data/inventory';
-import React, { useState } from 'react';
+
+// Contex
+import { GlobalContext } from '../../context/GlobalContext';
 
 const Home = ({ renderSlide }) => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const { menuOpen, inventory } = useContext(GlobalContext);
 
   return (
     <div className={`home-container ${menuOpen ? 'blurred' : ''}`}>

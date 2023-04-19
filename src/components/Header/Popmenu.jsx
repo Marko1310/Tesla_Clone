@@ -1,13 +1,15 @@
+// css
 import './Popmenu.css';
+
+// images
 import x from '../../images/close-button.png';
 
-import { useContext } from 'react';
-
 // Contex
+import { useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalContext';
 
-const Popmenu = ({ inventory }) => {
-  const { menuOpen, setMenuOpen } = useContext(GlobalContext);
+const Popmenu = () => {
+  const { menuOpen, setMenuOpen, inventory } = useContext(GlobalContext);
 
   return (
     <div className={`popmenu ${menuOpen ? 'open' : 'close'}`}>
@@ -17,7 +19,7 @@ const Popmenu = ({ inventory }) => {
       <div className="popmenu-tags-container">
         {inventory.map((el) => {
           return (
-            <a className="popmenu-tags" key={el.id} href={`#${el.id}`}>
+            <a className="popmenu-tags" key={el.id} href={`#${el.id}`} onClick={() => setMenuOpen(false)}>
               {el.title}
             </a>
           );
