@@ -28,8 +28,8 @@ const Header = () => {
         })}
       </div>
       <div className="menu-right">
-        <p className="menu-right-tags shop">Shop</p>
-        <p className="menu-right-tags account">Account</p>
+        {/* <p className="menu-right-tags shop">Shop</p>
+        <p className="menu-right-tags account">Account</p> */}
         <p className="menu-right-tags menu" onClick={() => setMenuOpen(true)}>
           Menu
         </p>

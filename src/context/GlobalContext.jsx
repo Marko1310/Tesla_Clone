@@ -9,7 +9,7 @@ export const GlobalContext = createContext();
 
 // provider component
 export const GlobalProvider = ({ children }) => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const globalState = {
     menuOpen,
