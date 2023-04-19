@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-
 import logo from '../../images/logo.svg';
-import x from '../../images/close-button.png';
 import './Header.css';
 import { inventory } from '../../data/inventory';
+import Popmenu from './Popmenu';
+import React, { useState } from 'react';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,20 +24,11 @@ const Header = () => {
       <div className="menu-right">
         <a className="menu-right-tags shop">Shop</a>
         <a className="menu-right-tags account">Account</a>
-        <a className="menu-right-tags menu">Menu</a>
+        <a className="menu-right-tags menu" onClick={() => setMenuOpen(true)}>
+          Menu
+        </a>
       </div>
-      <div className="popmenu">
-        <div className="x-container">
-          <img className="x" alt="x" src={x} />
-        </div>
-        {inventory.map((el) => {
-          return (
-            <a className="popmenu-tags" key={el.id} href={`#${el.id}`}>
-              {el.title}
-            </a>
-          );
-        })}
-      </div>
+      <Popmenu inventory={inventory} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </div>
   );
 };
