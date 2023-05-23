@@ -1,12 +1,19 @@
+// react
+import React from 'react';
+
 // css
 import './Section.css';
 
 // animation
 import { motion } from 'framer-motion';
 
-const Section = ({ el }) => {
+type eachElement = {
+  el: { id: number; title: string; img: string; description: string; leftBtnText: string; rightBtnText?: undefined };
+};
+
+const Section = ({ el }: eachElement) => {
   return (
-    <div id={el.id} className="section-container" style={{ backgroundImage: `url(${el.img}` }}>
+    <div id={el.id.toString()} className="section-container" style={{ backgroundImage: `url(${el.img}` }}>
       <motion.div
         animate={{ y: 0, opacity: 1 }}
         initial={{ y: 100, opacity: 0 }}
