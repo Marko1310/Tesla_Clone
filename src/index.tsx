@@ -5,7 +5,8 @@ import App from './App';
 
 import { GlobalProvider } from './context/GlobalContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root') as Element);
+
 root.render(
   <React.StrictMode>
     <GlobalProvider>
