@@ -8,7 +8,14 @@ import './Section.css';
 import { motion } from 'framer-motion';
 
 type eachElement = {
-  el: { id: number; title: string; img: string; description: string; leftBtnText: string; rightBtnText?: undefined };
+  el: {
+    id: number;
+    title: string;
+    img: string;
+    description: string;
+    leftBtnText: string;
+    rightBtnText?: string | undefined;
+  };
 };
 
 const Section = ({ el }: eachElement) => {

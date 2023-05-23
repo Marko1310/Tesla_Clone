@@ -6,10 +6,14 @@ import { inventory } from '../data/inventory';
 type GlobalContextType = {
   menuOpen: boolean;
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  inventory: (
-    | { id: number; title: string; img: string; description: string; leftBtnText: string; rightBtnText: string }
-    | { id: number; title: string; img: string; description: string; leftBtnText: string; rightBtnText?: undefined }
-  )[];
+  inventory: ({
+    id: number;
+    title: string;
+    img: string;
+    description: string;
+    leftBtnText: string;
+    rightBtnText?: string | undefined;
+  })[];
 };
 
 // create Context
