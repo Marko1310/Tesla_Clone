@@ -1,21 +1,30 @@
 // reactr
 import React, { createContext, useState } from 'react';
 
+type GlobalContextType = {
+  menuOpen: boolean;
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  inventory: (
+    | { id: number; title: string; img: string; description: string; leftBtnText: string; rightBtnText: string }
+    | { id: number; title: string; img: string; description: string; leftBtnText: string; rightBtnText?: undefined }
+  )[];
+};
+
 // data
 import { inventory } from '../data/inventory';
 
 // create Context
-export const GlobalContext = createContext();
+export const GlobalContext = createContext<GlobalContextType | null>(null);
 
 // provider component
-export const GlobalProvider = ({ children }) => {
+export const GlobalProvider = (props: React.PropsWithChildren<{}>) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const globalState = {
+  const globalState: GlobalContextType = {
     menuOpen,
     setMenuOpen,
     inventory,
   };
 
-  return <GlobalContext.Provider value={globalState}>{children}</GlobalContext.Provider>;
+  return <GlobalContext.Provider value={globalState}>{props.children}</GlobalContext.Provider>;
 };
