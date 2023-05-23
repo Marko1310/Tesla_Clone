@@ -10,13 +10,19 @@ import Section from '../Section/Section';
 // Contex
 import { GlobalContext } from '../../context/GlobalContext';
 
-const Home = ({ renderSlide }) => {
-  const { menuOpen, inventory } = useContext(GlobalContext);
+const Home = () => {
+  // context
+  const context = useContext(GlobalContext);
+
+  if (context === null) {
+    return null;
+  }
+  const { menuOpen, inventory } = context;
 
   return (
     <div className={`home-container ${menuOpen ? 'blurred' : ''}`}>
       {inventory.map((el) => {
-        return <Section renderSlide={renderSlide} key={el.id} el={el} />;
+        return <Section key={el.id} el={el} />;
       })}
     </div>
   );

@@ -1,5 +1,7 @@
 // reactr
 import React, { createContext, useState } from 'react';
+// data
+import { inventory } from '../data/inventory';
 
 type GlobalContextType = {
   menuOpen: boolean;
@@ -9,9 +11,6 @@ type GlobalContextType = {
     | { id: number; title: string; img: string; description: string; leftBtnText: string; rightBtnText?: undefined }
   )[];
 };
-
-// data
-import { inventory } from '../data/inventory';
 
 // create Context
 export const GlobalContext = createContext<GlobalContextType | null>(null);
