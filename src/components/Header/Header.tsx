@@ -5,13 +5,20 @@ import React, { useContext } from 'react';
 import './Header.css';
 
 // images
+// @ts-ignore
 import logo from '../../images/logo.svg';
 
 // Contex
 import { GlobalContext } from '../../context/GlobalContext';
 
 const Header = () => {
-  const { menuOpen, setMenuOpen, inventory } = useContext(GlobalContext);
+  //context
+  const context = useContext(GlobalContext);
+
+  if (context === null) {
+    return null;
+  }
+  const { menuOpen, setMenuOpen, inventory } = context;
 
   return (
     <div className={`header-container ${menuOpen ? 'blurred' : ''}`}>
